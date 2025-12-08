@@ -22,6 +22,9 @@ const { createAdmin } = require('./controlers/user.controler');
 
 
 // the route associate to the url
+app.get('/', (req, res) => {
+  res.json({ message: 'Backend is working perfectly!' });
+});
 app.use('/user',userRoute);
 app.use('/client',clientRoute);
 app.use('/project',projectRoute);

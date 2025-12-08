@@ -1,15 +1,18 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/lastproject')
+mongoose.connect(process.env.MONGO_URI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+})
 .then(
     ()=>{
-        console.log('connected th the db');
+        console.log('connected to the hosted mongo db');
     }
 )
 .catch(
     (err)=>{
-        console.log(err);
+        console.error('error connecting to the hosted mongo db', err);
         
     }   
 )
