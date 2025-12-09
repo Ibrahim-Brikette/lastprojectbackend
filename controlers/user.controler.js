@@ -41,8 +41,12 @@ const createAdmin= async (fileName)=>{
             let admin = new User(data);
             admin.password = bcrypt.hashSync(data.password,10);
             await admin.save() ;
+            lognsole.log('admin created');
              
             
+        }
+        else{
+            console.log('admin already exists');
         }
           
         
