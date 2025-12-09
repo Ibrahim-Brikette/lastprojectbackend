@@ -13,7 +13,10 @@ const mongoose = require('mongoose');
 )
 .catch(
     (err)=>{
+           console.log(process.env.MONGO_URL);
         console.error('error connecting to the hosted mongo db', err);
+     
+        
         
     }   
 )
